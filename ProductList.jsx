@@ -5,9 +5,12 @@ export default class ProductList extends React.Component {
 	render() {
 		return (
 			<div>
-        {this.props.products.map(function(product,i) {
-          return <Product key={product.name} product={product} />
-        },this)}
+        <h2>Products</h2>
+        <ul className="collection">
+          {this.props.products.map(function(product,i) {
+            return <Product key={product.name} product={product} />
+          },this)}
+        </ul>
 			</div>
 		);
 	}
