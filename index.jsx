@@ -1,7 +1,9 @@
 require("./node_modules/materialize-css/dist/css/materialize.min.css")
+require("./node_modules/materialize-css/dist/js/materialize.js");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
+import ProductForm from './ProductForm';
 
 var mockData = {
 	"products":[
@@ -25,6 +27,7 @@ export class App extends React.Component {
 		return (
       <div>
 				<ProductList products={mockData.products}/>
+				<ProductForm/>
 			</div>
 		);
 	}

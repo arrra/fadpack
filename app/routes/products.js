@@ -17,4 +17,16 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/', (req, res) => {
+	let product = new Product(req.body);
+	product.save((err, product) => {
+		if (err) {
+			console.error(err);
+			res.status(404).send(err);
+			return;
+		}
+
+    res.status(200).send();
+	});
+});
 module.exports = router;
