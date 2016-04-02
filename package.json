@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --progress --profile --colors",
     "dev": "webpack-dev-server --progress --profile --colors --hot",
-    "start-server": "node app",
+    "start-server": "node server",
     "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {

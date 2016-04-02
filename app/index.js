@@ -14,6 +14,4 @@ app.use((req, res, next) => {
 
 router(app);
 
-app.listen(3000);
-
 module.exports = app;
