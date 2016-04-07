@@ -1,9 +1,12 @@
 require("./node_modules/materialize-css/dist/css/materialize.min.css")
 require("./node_modules/materialize-css/dist/js/materialize.js");
 import React from 'react';
+import {render }from 'react-dom';
+import { Router, Route, Link, hashHistory } from 'react-router'
 import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
 import ProductForm from './ProductForm';
+import TestComp from './TestComp';
 
 const productsUrl = 'http://localhost:3000/products';
 
@@ -22,8 +25,9 @@ export class App extends React.Component {
 	render() {
 		return (
       <div>
+        <Link className="btn btn-primary" to="/products">Add Content</Link>
 				<ProductList products={this.state.products}/>
-				<ProductForm onProductAdded={this._handleAddedProduct.bind(this)}/>
+				{/* <ProductForm onProductAdded={this._handleAddedProduct.bind(this)}/> */}
 			</div>
 		);
 	}
@@ -42,5 +46,12 @@ export class App extends React.Component {
 
 }
 
-ReactDOM.render(<App/>, document.querySelector("#myApp"));
+render((
+  <Router history={hashHistory}>
+		<Route path="/" component={App} />
+		<Route path="products" component={ProductForm} />
+  </Router>
+), document.querySelector("#myApp"))
+
+// ReactDOM.render(<App/>, document.querySelector("#myApp"));
 

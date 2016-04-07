@@ -31,6 +31,14 @@ export default class ProductForm extends React.Component {
                   ref= {node => this._releaseDateInput = node}
                 />
 							</div>
+							<div className="input-field col s6">
+                <input
+                  type="text"
+                  name="link"
+                  ref= {node => this._linkInput = node}
+                />
+								<label>Content Link</label>
+							</div>
 						</div>
             <input
               className="btn btn-primary btn-lg" 
