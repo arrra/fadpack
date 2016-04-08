@@ -34,7 +34,7 @@ export default class ProductForm extends React.Component {
 							<div className="input-field col s6">
                 <input
                   type="text"
-                  name="link"
+                  name="content_link"
                   ref= {node => this._linkInput = node}
                 />
 								<label>Content Link</label>
@@ -55,6 +55,7 @@ export default class ProductForm extends React.Component {
     let product = {};
     product.name = this._nameInput.value;
     product.release_date = this._releaseDateInput.value;
+    product.content_link = this._linkInput.value;
     $.ajax({
       url: url,
       type: 'POST',
