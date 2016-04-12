@@ -29,7 +29,7 @@ export default class ContentForm extends React.Component {
                   name='source'
                   ref={node => this._source = node}
                 />
-								<label>Product Name</label>
+								<label>source</label>
 							</div>
 						</div>
             <input
