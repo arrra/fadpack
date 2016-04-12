@@ -1,6 +1,6 @@
 'use strict';
 
-const Product = require('../../app/models/Product');
+const Product = require('../../../app/models/Product');
 
 describe('Product model', function() {
   describe('validation', function() {
