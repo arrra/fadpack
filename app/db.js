@@ -8,6 +8,7 @@ const uri = `mongodb://localhost/${name}`;
 
 // Register all models
 require('./models/Product');
+require('./models/Content');
 
 mongoose.connect(uri);
 
