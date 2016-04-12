@@ -27,7 +27,7 @@ export default class ContentForm extends React.Component {
                 <input
                   type="text"
                   name='source'
-                  ref={node => this._source = node}
+                  ref={node => this._sourceInput = node}
                 />
 								<label>source</label>
 							</div>
@@ -45,8 +45,8 @@ export default class ContentForm extends React.Component {
   _handleSubmit (event) {
     event.preventDefault();
     let content = {};
-    content.productId = this._productIdInput.value;
-    content.source = this._source.value;
+    content.product_id = this._productIdInput.value;
+    content.source = this._sourceInput.value;
     $.ajax({
       url: url,
       type: 'POST',

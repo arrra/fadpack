@@ -3,7 +3,6 @@ require("./node_modules/materialize-css/dist/js/materialize.js");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
-import ProductForm from './ProductForm';
 import ContentForm from './ContentForm';
 
 const productsUrl = 'http://localhost:3000/products';
