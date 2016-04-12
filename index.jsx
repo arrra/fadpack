@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
 import ProductForm from './ProductForm';
+import ContentForm from './ContentForm';
 
 const productsUrl = 'http://localhost:3000/products';
 
@@ -23,7 +24,7 @@ export class App extends React.Component {
 		return (
       <div>
 				<ProductList products={this.state.products}/>
-				<ProductForm onProductAdded={this._handleAddedProduct.bind(this)}/>
+        <ContentForm />
 			</div>
 		);
 	}
