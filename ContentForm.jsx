@@ -1,9 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
 
-const url = "http://localhost:3000/products";
+const url = "http://localhost:3000/contents";
 
-export default class ProductForm extends React.Component {
+export default class ContentForm extends React.Component {
   constructor() {
     super();
     this._handleSubmit = this._handleSubmit.bind(this);
@@ -18,18 +18,18 @@ export default class ProductForm extends React.Component {
 							<div className="input-field col s6">
                 <input
                   type="text"
-                  name='name'
-                  ref={node => this._nameInput = node}
+                  name='product_id'
+                  ref={node => this._productIdInput = node}
                 />
 								<label>Product Name</label>
 							</div>
 							<div className="input-field col s6">
                 <input
-                  type="date"
-                  className="datepicker"
-                  name="release_date"
-                  ref= {node => this._releaseDateInput = node}
+                  type="text"
+                  name='source'
+                  ref={node => this._sourceInput = node}
                 />
+								<label>source</label>
 							</div>
 						</div>
             <input
@@ -44,15 +44,14 @@ export default class ProductForm extends React.Component {
 
   _handleSubmit (event) {
     event.preventDefault();
-    let product = {};
-    product.name = this._nameInput.value;
-    product.release_date = this._releaseDateInput.value;
+    let content = {};
+    content.product_id = this._productIdInput.value;
+    content.source = this._sourceInput.value;
     $.ajax({
       url: url,
       type: 'POST',
-      data: product,
+      data: content,
       success: () => {
-        this.props.onProductAdded(product);
       }
     })
   }
