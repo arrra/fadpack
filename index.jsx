@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
 import ContentForm from './ContentForm';
 import Product from './Product';
+import ProductPage from './ProductPage';
 import { Router, Route, Link, hashHistory } from 'react-router'
 
 const productsUrl = 'http://localhost:3000/products';
