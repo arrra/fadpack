@@ -10,7 +10,7 @@ export default class ProductList extends React.Component {
         <h2>Products</h2>
         <ul className="collection">
           {this.props.products.map(function(product,i) {
-            return <Product key={product.name} product={product} index={i} />
+            return <Product key={product.name} product={product} />
           },this)}
         </ul>
 			</div>

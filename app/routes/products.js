@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Product.find({'_id': req.params.id}, (err, product) => {
+  Product.findOne({'_id': req.params.id}, (err, product) => {
     if (err) {
       console.error(err);
       res.status(404).send(err);
