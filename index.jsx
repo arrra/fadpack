@@ -4,6 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
 import ContentForm from './ContentForm';
+import ProductPage from './ProductPage';
+import { Router, Route, hashHistory } from 'react-router'
 
 const productsUrl = 'http://localhost:3000/products';
 
@@ -41,6 +43,11 @@ export class App extends React.Component {
   }
 
 }
+ReactDOM.render((
+	<Router history={hashHistory}>
+		<Route path="/" component={App}/>
+		<Route path="products/:id" component={ProductPage}/> 
+	</Router>
+), document.querySelector("#myApp"))
 
-ReactDOM.render(<App/>, document.querySelector("#myApp"));
 

@@ -29,4 +29,15 @@ router.post('/', (req, res) => {
     res.status(200).send();
 	});
 });
+
+router.get('/:id', (req, res) => {
+  Product.findOne({'_id': req.params.id}, (err, product) => {
+    if (err) {
+      console.error(err);
+      res.status(404).send(err);
+      return;
+    }
+    res.json(product);
+  })
+})
 module.exports = router;
